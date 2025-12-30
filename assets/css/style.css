@@ -45,9 +45,13 @@
   cursor: pointer;
   font-size: 30px;
   line-height: 70px;
-  border-radius: 45px;
-  display: inline-block;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin: 4px;
+  overflow: hidden; /* ensure any child image is clipped to the circular button */
+  vertical-align: middle; /* align the inline-flex button with neighbors */
 }
 
 .github {
@@ -62,9 +66,54 @@
   color: grey;
 }
 
+/* GitLab button uses a logo image instead of Font Awesome */
+.icon-btn.gitlab {
+  /* Use an inline image inside the button; sizing handled by .btn-icon-img */
+  background-image: none;
+  background-color: transparent;
+  color: transparent; /* hide any inner font icon if present */
+}
+
+/* image placed inside .icon-btn (used for gitlab) */
+.icon-btn .btn-icon-img {
+  /* Display the supplied circular image so it fills the button area and remains circular */
+  width: 85%;
+  height: 85%;
+  display: block;
+  margin: 0 auto;
+  align-self: center;
+  object-fit: contain; /* preserve circular image without cropping */
+  border-radius: 50%; /* keep circle */
+}
+
+/* GitLab color + hover behaviour follows the same approach as other social buttons */
+.gitlab {
+  color: #FC6D26;
+}
+.gitlab:hover {
+  background-color: #FC6D26;
+}
+
 .icon-btn:hover {
   transform: scale(1.10);
   color: #FFFFFF;
+}
+
+/* Contact phone icons */
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+}
+.contact-phone {
+  height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+  object-fit: contain;
+  margin-top: -14px;
 }
 
 .linkedin:hover {
