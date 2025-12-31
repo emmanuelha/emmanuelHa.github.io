@@ -90,7 +90,7 @@
 .gitlab {
   color: #FC6D26;
 }
-.gitlab:hover {
+.social .gitlab:hover {
   background-color: #FC6D26;
 }
 
